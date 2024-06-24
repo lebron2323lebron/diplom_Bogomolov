@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+<div class='sert-info'>
+    <div class='sert-info-text'>
+        <p>Подарочный сертификат в WakeAddiction</p>
+    </div>
+    <div class='sert-info-img'>
+        <img class='sert-img' src={% static 'img/river.png' %}>
+    </div>
+</div>
+<div class='sert-image'>
+    <div class='sert-img-text'>
+        <p>Дарите яркие впечатления с сертификатом на серфинг!</p>
+    </div>
+    <div class='sert-img-img'>
+        <img class='sert-img2' src={% static 'img/sert.png' %}>
+    </div>
+</div>
+<div id="zakaz" class='sert-forma'>
+    <div class='sert-forma-text'>
+        <p>Для получения услуги заполните форму или свяжитесь с нами</p>
+    </div>
+    <div class='sert-forma-form'>
+        <form>
+            <h3>Заявка на звонок</h3>
+            <fieldset class="info">
+                <label for="username">Имя пользователя</label>
+                    <input type="text" name="username" id="username" value= {{ user.username }}>
+                </label>
+                <label>
+                    Номер телефона
+                    <input type="tel" name="phone-number">
+                </label>
+            </fieldset>
+            <input class="btn-sert" type="submit" name="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+{% endblock %}

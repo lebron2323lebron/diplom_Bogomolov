@@ -1,0 +1,17 @@
+{% extends 'main/profile.html' %}
+
+{% block profile-content %}
+<div class="courses">
+    {% for course in courses %}
+    <div class="course-item">
+        <img src="{{ course.logo.url }}">
+        <div class="course-title">
+            {{ course.title }}
+        </div>
+        <div class="course-div">
+            <a class="course-btn" href={% url 'modules1' %}>Продолжить</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

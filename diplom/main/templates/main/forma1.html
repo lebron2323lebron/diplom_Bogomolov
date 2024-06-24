@@ -1,0 +1,39 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+<div class='forma'>
+    <form>
+        <fieldset class="info">
+            <label>
+                Название курса
+                <select name="cources">
+                    <option value="Вводный" selected>Вводный</option>
+                    <option value="Тренерский">Тренерский</option>
+                    <option value="Для пилота">Для пилота</option>
+                </select>
+            </label>
+            <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="username" value= {{ user.username }}>
+            <label>
+                Дата первого занятия
+                <input type="date" name="birthday">
+            </label>
+            <label>
+                Время первого занятия
+                <input type="time" name="game-time">
+            </label>
+            <label>
+                Email
+                <input type="email" name="email-address" placeholder="name@domain.com" value={{ user.email }}>
+            </label>
+            <label>
+                Номер телефона
+                <input type="tel" name="phone-number">
+            </label>
+            <textarea name="comment">Остались вопросы или пожелания? Напиши их тут</textarea>
+            <br>
+            <input class="btn" type="submit" name="submit" value="Отправить">
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

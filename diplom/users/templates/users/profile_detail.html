@@ -1,0 +1,36 @@
+{% extends 'main/profile.html' %}
+
+
+{% block profile-content %}
+    <div class="page-container">
+        <div class="prof">
+        <div class="krug">
+            
+        </div>
+            <div class="roe">
+                <div class="col-xl-4 col-sm-12">
+                    <p>
+                        Группа: {{ user_group }}
+                        {% if user_profile.last_name %}
+                            <br>
+                            {{ user_profile.last_name }}
+                        {% else  %} 
+                            Нет профиля
+                        {% endif %}
+                        {% if user_profile.first_name %}
+                            {{ user_profile.first_name }}
+                        {% endif %}
+                        {% if user_profile.second_name %}
+                            {{ user_profile.second_name }}
+                        {% endif %}
+                    </p>
+                    
+                    <div class="button-prof">
+                        <a href="edit_user_profile">Редактировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

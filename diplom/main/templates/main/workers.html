@@ -1,0 +1,72 @@
+{% extends 'main/profile.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .schedule-card-conteiner {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(auto);
+        }
+
+        .work-info {
+            display: flex;
+            flex-direction: column;
+            width: 340px;
+            text-align:center;
+        }
+
+        .work-info p {
+            color: #1f2833;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .work-info h2 {
+            color: #1f2833;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .work-info h3 {
+            color: #1f2833;
+            font-size:31px;
+            font-weight: 600;
+        }
+        .title {
+            color: #1f2833;
+            font-size: 39px;
+            font-weight: 400;
+        }
+        
+    </style>
+    <div class="title">Команда мечты</div>
+    <div class="about-vector">
+        <img src="{% static 'img/Vector3.png' %}" alt="line">
+    </div>
+    <div class="schedule-card-conteiner">
+        {% for worker in workers %}
+        <div class="work">
+            <div class="worker">
+                <img class='worker-img' src="{{ worker.logo.url }}">
+            </div>
+            <div class="work-info">
+                <h3>
+                    {{ worker.firstname }}
+                    {{ worker.lastname }}
+                </h3>
+                <h2>
+                    {{ worker.role }}
+                </h2>
+                <p>
+                    {{ worker.about }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="button1">
+        <button class="btn">
+            <a class="button-worker", href="{% url '#' %}">Стать частью команды</a>
+        </button>
+    </div>
+    
+{% endblock %}

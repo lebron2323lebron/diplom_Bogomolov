@@ -1,0 +1,101 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_tags %}
+{% load static  %}
+{% block content %}
+<style>
+    /* HIDE RADIO */
+    [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    /* IMAGE STYLES */
+    [type=radio] + img {
+    cursor: pointer;
+    width: 100px;
+    }
+
+    /* CHECKED STYLES */
+    [type=radio]:checked + img {
+    outline: 2px solid #f00;
+    }
+
+    .forma p {
+        color:#000000;
+        font-size:20px;
+        font-weight:600;
+    }
+
+    textarea {
+        background-color:#c5c6c7;
+        border: 1px solid #000;
+        color:#000;
+    }
+
+    .forma {
+        margin-bottom: 30px;
+        padding: 10px;
+    }
+</style>
+<form method="post" action="{% url 'forma' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="button_reg">
+        <button type="submit" class="btn btn-dark mt-2">Зарегистрироваться</button>
+    </div>
+</form>
+<div class='forma'>
+    <form>
+        <fieldset class="info">
+            <label>
+                Выберите катер:
+                <label>
+                    <input type="radio" name="test" value="small" checked>
+                    <img src="{% static 'img/kater1.png' %}" alt="Option 1">
+                </label>
+                  
+                <label>
+                   <input type="radio" name="test" value="big">
+                   <img src="{% static 'img/kater2.png' %}" alt="Option 2">
+                </label>
+            </label>
+            <label>
+                Выберите направление:
+                <select name="cources">
+                    <option value="Вейксерфинг">Вейксерфинг</option>
+                    <option value="Вейкбординг">Вейкбординг</option>
+                    <option value="Прогулка водная">Прогулка водная</option>
+                </select>
+            </label>
+            <label>
+                Дата первого занятия
+                <input type="date" name="birthday">
+            </label>
+            <label>
+                Время первого занятия
+                <input type="time" name="game-time">
+            </label>
+            <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="username" value= {{ user.firstname }}>
+            <label>
+                Email
+                <input type="email" name="email-address" placeholder="name@domain.com" value={{ user.email }}>
+            </label>
+            <label>
+                Сколько вас будет?
+                <input type="number" name="cost">
+            </label>
+            <label>
+                Номер телефона
+                <input type="tel" name="phone-number">
+            </label>
+            <textarea name="comment">Комментарий к заказу</textarea>
+            <br>
+            <p>Общая сумма: 6000 </p>
+            <input class="btn" type="submit" name="submit" value="Отправить">
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

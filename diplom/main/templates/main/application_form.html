@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="forma">
+    <form action="{% url 'forma' %}" method="post">
+        {% csrf_token %}
+        <div class="info">
+            <label for="username">Имя пользователя</label>
+            <input type="text" name="username" id="username" value={{ user.username }}>
+            <label>
+                Email
+                <input type="email" name="email-address" placeholder="name@domain.com" value={{ user.email }}>
+            </label>
+            {% for field in form %}
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+            {% endfor %}
+        </div>
+        <!--        {{ form.as_p }}-->
+        <input type="submit" value="Отправить" class="btn">
+    </form>
+</div>
+{% endblock %}

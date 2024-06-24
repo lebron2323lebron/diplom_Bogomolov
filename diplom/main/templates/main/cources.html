@@ -1,0 +1,39 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="title">Наши курсы</div>
+<div class="qaz">
+    <div class="uslugs">
+        <div class="qwe">
+            <h2>Вводный<h2>
+            <p>Правила клуба, вводная информация о нише вейксерфа</p>
+            <button class="btn">
+                <a class="button-uslugs", href="{% url 'course1' %}">Узнать подробнее</a>
+            </button>
+        </div>
+    </div>
+    <div class="uslugs">
+        <div class="qwe">
+            <h2>Тренерский<h2>
+            <p>Повысить мастерство обучения, ознакомиться с парвилами</p>
+            <button class="btn">
+                <a class="button-uslugs", href="{% url 'course2' %}">Узнать подробнее</a>
+            </button>
+        </div>
+    </div>
+    <div class="uslugs">
+        <div class="qwe">
+            <h2>Для пилота<h2>
+            <p>Вспомнить правила акватории, особенности катеров клуба</p>
+            <button class="btn">
+                <a class="button-uslugs", href="{% url 'course3' %}">Узнать подробнее</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="button1">
+<button class="btn">
+    <a class="button-cource", href="{% url 'forma1' %}">Записаться</a>
+</button>
+</div>
+{% endblock %}

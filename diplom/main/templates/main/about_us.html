@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+<h2 class="about-title">
+    НАУЧИСЬ УЧИТЬ ЛОВИТЬ ВОЛНУ
+</h2>
+<div class="about-vector">
+    <img src="{% static 'img/Vector3.png' %}" alt="line">
+</div>
+<div class="wrapper-fist">
+    <div class="fist-text">
+        <div>
+            <img src="{% static 'img/fist.png' %}" alt="fist">
+        </div>
+        <div class="about-text">
+            <h3 class="about-text-header">
+                О нас:
+            </h3>
+            <p>
+                Ты не будешь в одиночестве с первой же минуты. Приветливые администраторы встретят тебя и помогут подобрать снаряжение – гидрокостюм, доску и жилет. После этого тебя передадут в руки нашей профессиональной команды. Вы вместе уходите на воду, и начинается самое интересное. В первую очередь – техника безопасности, без неё никак. Дальше инструктор расскажет, что именно тебе нужно будет делать, чтобы встать на доску. И всё, ты в воде и готовишься рассекать волны под чутким руководством профессионала. Работа над ошибками тоже будет проходить прямо в воде, чтобы еще лучше закрепить навыки.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="wrapper-page">
+    <div class="about-second-page">
+        <div class="about-item">
+            <img src="{% static 'img/Rectangle286.png' %}">
+            <p>
+                Мощные катера, <br> которые <br> обеспечивают <br> стабильную волну
+            </p>
+        </div>
+        <div class="about-item">
+            <img src="{% static 'img/Rectangle286.png' %}">
+            <p>
+                Мощные катера, <br> которые <br> обеспечивают <br> стабильную волну
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

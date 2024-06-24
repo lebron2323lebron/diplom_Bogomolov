@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<ul>
+    {% for course in courses %}
+    <li>{{ course.title }}</li>
+    <li><img src="{{ course.logo.url }}"></li>
+    {% endfor %}
+</ul>
+{% endblock %}

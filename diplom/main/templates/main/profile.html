@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="title profile-title">ВЕЙК-ШКОЛА</div>
+<div class="profile-links">
+    <div>
+        <a class="btn" href="{% url 'profile-courses' %}">Мои курсы</a>
+    </div>
+    <div>
+        <a class="btn" href="{% url 'users:profile-detail' username=user.username %}">Профиль</a>
+    </div>
+    <div>
+        <a class="btn" href="{% url 'zapisi' %}">Мои записи</a>
+    </div>
+</div>
+{% block profile-content %}
+{% endblock %}
+{% endblock %}

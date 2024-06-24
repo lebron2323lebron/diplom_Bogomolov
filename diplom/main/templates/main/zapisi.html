@@ -1,0 +1,53 @@
+{% extends 'main/profile.html' %}
+
+{% block profile-content %}
+    <style>
+        .schedule-card-conteiner {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(auto);
+        }
+        .schedule-card{
+            width: 285px;
+            height: 220px;
+            background-color: #45a29e;
+            padding: 0;
+            border-radius: 15px;
+        }
+        .schedule-card-header{
+            background-color: #1f2833;
+            color: white;
+            margin: 0;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+        .schedule-card-content{
+            padding: 10px 15px;
+        }
+        .schedule-card-content p{
+            margin: 0;
+            font-size: 25px;
+            font-weight: 600;
+        }
+    </style>
+    
+    <div class="schedule-card-conteiner">
+        {% for profile in profiles %}
+        <div class="schedule-card">
+            <div class="schedule-card-header">
+                {{ profile.time }}
+            </div>
+            <div class="schedule-card-content">
+                <p>
+                    {{ profile.user.first_name }}
+                    {{ profile.user.last_name }}
+                </p>
+                {{ profile.phone_number }}
+
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    
+{% endblock %}

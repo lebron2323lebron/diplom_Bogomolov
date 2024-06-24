@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}  
+    <form method="post" action='{% url 'users:logout' %}'>
+        {% csrf_token %}
+        <div class="form-section-container">  
+            <h2>Вы успешно вышли с сайта</h2>  
+            <a class='button' href="{% url 'users:login' %}">Войти в личный кабинет снова</a>  
+        </div>
+    </form>
+{% endblock %}

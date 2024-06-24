@@ -1,0 +1,76 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="title-course">КУРС ВВОДНЫЙ</div>
+<div class="course-info">
+    <div class='course-main'>
+        <div class='spisok'>
+            <div class='spisok-info'>
+                <p> 1. Термины, используемые в работе<br><br>
+                    2. Общие положения<br><br>
+                    3. Запрещающие правила в клубе<br><br>
+                    4. Правила поведения во время передвижения за катером-буксировщиком<br></p>
+            </div>
+            <div class='inform'>
+                <p>
+                    Вводный курс содержит минимально необходимую информацию для сотрудников акватории, необходимую знать. Курс идеально подойдет для новых сотрудников, для клиентов клуба, желающих глубже узнать специфику работы клуба, а также подробнее узнать общие правила, действующие в яхт-клубе. Изучение курса проходит в режиме онлайн
+                </p>
+            </div>
+        </div>
+        <div class="home-but">
+            <button class="btn">
+                <a class="button-home", href="#forma1">Записаться</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="sertificate-main">
+    <div class="sertificate-info">
+        <div class="title-sert">СЕРТИФИКАТ ПОСЛЕ ОБУЧЕНИЯ</div>
+        <p>После успешного прохождения курса по запросу выдается сертификат, подтверждающий прохождение курса. Пример сертификата, который вы получите можно увидеть ниже</p>
+    </div>
+    <div class="sertificate-block">
+        <img src="{% static 'img/sert-vvod.png' %}">
+    </div>
+</div>
+
+<div id="forma1" class='forma-sert'>
+    <form>
+        <fieldset class="info">
+            <label>
+                Название курса
+                <select name="cources">
+                    <option value="Вводный" selected>Вводный</option>
+                    <option value="Тренерский">Тренерский</option>
+                    <option value="Для пилота">Для пилота</option>
+                </select>
+            </label>
+            <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="username" value= {{ user.username }}>
+            <label>
+                Дата первого занятия
+                <input type="date" name="birthday">
+            </label>
+            <label>
+                Время первого занятия
+                <input type="time" name="game-time">
+            </label>
+            <label>
+                Email
+                <input type="email" name="email-address" placeholder="name@domain.com" value={{ user.email }}>
+            </label>
+            <label>
+                Стоимость
+                <input type="number" name="cost">
+            </label>
+            <label>
+                Номер телефона
+                <input type="tel" name="phone-number">
+            </label>
+            <textarea name="comment">Оставьте свои пожелания</textarea>
+            <br>
+            <input class="btn" type="submit" name="submit" value="Отправить">
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
