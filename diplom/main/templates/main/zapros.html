@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="forma-reiting">
+    <form  method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="button_reg">
+            <button type="submit" class="btn btn-dark mt-2">Отправить</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

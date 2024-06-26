@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import FormView, CreateView
 
-from main.forms import ApplicationForm, ZakazForm, Uslugs
-from main.models import ParticipationApplication, Course, Workers, Uslugs, Zakaz
+from main.forms import ZakazForm, Uslugs, RemontForm, ZaprosForm
+from main.models import ParticipationApplication, Workers, Uslugs, Zakaz, Remont, User, Zapros
 
 
 # Create your views here.
@@ -17,21 +17,24 @@ def prices(request):
     return render(request, 'main/prices.html')
 
 
-def cources(request):
-    return render(request, 'main/cources.html')
-
-def course1(request):
-    return render(request, 'main/course1.html')
-
-def course2(request):
-    return render(request, 'main/course2.html')
-
-def course3(request):
-    return render(request, 'main/course3.html')
-
 def reiting(request):
     return render(request, 'main/reiting.html')
 
+# def zapros(request):
+#     zapros = zapros.objects.all()
+#     return render(request, 'main/zapros.html', )
+
+def Zapros_View(request):
+    if request.method == 'POST':
+        form = ZaprosForm(request.POST)
+        if form.is_valid():
+                form.instance.user = request.user
+                zapros = form.save(commit=False)
+                zapros.save()
+                return redirect('/')
+    else:
+        form = ZaprosForm()
+    return render(request, 'main/zapros.html', {'form': form})
 
 def contacts(request):
     return render(request, 'main/contacts.html')
@@ -46,22 +49,20 @@ def forma1(request):
 def profile(request):
     return render(request, 'main/profile.html', context={"profile":request.user.profile})
 
+def zapisi(request):
+    remonts = Remont.objects.all().order_by('-data')[:10]
+    return render(request, 'main/zapisi.html', {'remonts':remonts})
 
-def profile_courses(request):
-    return render(request, "main/profile-courses.html", context={"courses": request.user.courses.all()})
-
-
-
-class zapisi(CreateView):
-    template_name = "main/zapisi.html"
-    model = ParticipationApplication
-    form_class = ApplicationForm
-
-    def get_context_data(self, **kwargs):
-        kwargs["user"] = self.request.user 
-        return super().get_context_data(**kwargs)
+# class zapisi(CreateView):
+#     template_name = "main/zapisi.html"
+#     model = Remont
     
-def schedule(request):
+
+#     def get_context_data(self, **kwargs):
+#         kwargs["user"] = self.request.user 
+#         return super().get_context_data(**kwargs)
+    
+# def schedule(request):
     profiles = ParticipationApplication.objects.all()
     return render(request, 'main/zapisi.html', {'profiles': profiles})
 
@@ -85,12 +86,18 @@ def schedule(request):
         return super().form_valid(form)
 
 def Zakaz_view(request):
-    form = ZakazForm()
+    if request.method == 'POST':
+        form = ZakazForm(request.POST)
+        if form.is_valid():
+                zakaz = form.save(commit=False)
+                zakaz.save()
+                return redirect('/')
+    else:
+        form = ZakazForm()
     return render(request, 'main/forma.html', {'form': form})
 
 class ApplicationFormView(CreateView):
     template_name = "main/application_form.html"
-    form_class = ApplicationForm
     success_url = "/profile-courses"
     model = ParticipationApplication
 
@@ -111,22 +118,21 @@ class ApplicationFormView(CreateView):
 def about(request):
     return render(request, "main/about_us.html")
 
-def course1(request):
-    return render(request, 'main/course1.html')
-
-def course2(request):
-    return render(request, 'main/course2.html')
-
-def course3(request):
-    return render(request, 'main/course3.html')
-
-def module(request):
-    cources = Course.objects.all()
-    return render(request, "main/modules.html", {'cources' : cources})
-
 def sertificate(request):
     return render(request, 'main/sertificate.html')
 
 def workers(request):
     workers = Workers.objects.all()
     return render(request, 'main/workers.html', {'workers':workers})
+
+def create_remont(request):
+    if request.method == 'POST':
+        form = RemontForm(request.POST)
+        if form.is_valid():
+            form.instance.mehanik = request.user
+            remont = form.save(commit=False)
+            remont.save()
+            return redirect('/')
+    else:
+        form = RemontForm()
+    return render(request, 'remont.html', {'form': form})

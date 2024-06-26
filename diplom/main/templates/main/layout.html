@@ -1,10 +1,9 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>{% block title %}{% endblock %}</title>
     <link rel=»stylesheet» href=»style.css»>
     <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}" type="image/x-icon">
@@ -32,15 +31,15 @@
             <div class="phone">
                 <div class="phone-holder">
                     <div class="phone-img">
-                        <img src="{% static 'img/phone.png' %}" alt="">
+                        <img src="{% static 'img/phone.png' %}" alt="phone">
                     </div>
                     <div class="number"><a class="num" href="#">+7-900-700-90-70</a> </div>
                 </div>
             </div>
-            <nav class="nav"></nav>
-                <a class="nav-item" href="#flot">Флот</a></li>
-                <a class="nav-item" href="#price">Цены и услуги</a></li>
-                <a class="nav-item" href="#contacts">Контакты</a></li>
+            <nav class="nav">
+                <a class="nav-item" href="#flot">Флот</a>
+                <a class="nav-item" href="#price">Цены и услуги</a>
+                <a class="nav-item" href="#contacts">Контакты</a>
             </nav>
             {% if user.is_authenticated %}
                 <div class="dropdown">
@@ -78,13 +77,12 @@
     </main>
     <footer id="contacts" class="footer">
         <div class="footer-element">
-
             <div class="contacts">
                 <p>Москва, Яхт-клуб “River Club”</p>
                 <p>Ул. Авиационная 79к1 стр2</p>
                 <p>Режим работы: ПН-ВС 6:00-22:00</p>
                 <p>info_WA@mail.ru</p>
-                <p href="tel:+79007009070">+7 (900) 700-90-70</p>
+                <p>+7 (900) 700-90-70</p>
             </div>    
             <div class="social">
                 <div class="social-all">

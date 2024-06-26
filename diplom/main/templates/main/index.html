@@ -5,318 +5,311 @@
 {% block content %}
 
 
-    <body id="bg">
-    <div class="features">
-        <div class="home-verh">
-            <div class="main_text-h">
-                Вейк-
-            </div>
-            <div class="main-text">
-                Серфинг
-            </div>
-            <div class="submain-text">Серф-школа</div>
-            <div class="home-but">
-                <button class="btn">
+    
+        <div class="features">
+            <div class="home-verh">
+                <div class="main_text-h">
+                    Вейк-
+                </div>
+                <div class="main-text">
+                    Серфинг
+                </div>
+                <div class="submain-text">Серф-школа</div>
+                <div class="home-but">
                     <a class="button-home" href="{% url 'forma' %}">Записаться</a>
-                </button>
+                </div>
+            </div>
+            <div class='home-img'>
+                <img class='home-img-img' src="{% static "img/3.png" %}" alt='3'>
             </div>
         </div>
-        <div class='home-img'>
-            <img class='home-img-img' src="{% static "img/3.png" %}">
-        </div>
-    </div>
-    <div class="wrapper-page">
-        <div class="about-second-page">
-            <h1>WAKEADDICTION</h1><br>
-            <p>СЕРФ ШКОЛА</P>
-        </div>
-    </div>
-    <div class="uslugs-home">
-        <h3>Наши Услуги</h3>
-        <div class="uslugs">
-            {% for uslug in uslugs %}
-            <div class="uslugs-item">
-                <img class='uslug-logo' src="{{ uslug.logo.url }}" alt='logo'>
-                <div class="uslugs-title">
-                    {{ uslug.title }}
-                </div>
-                {% if uslug.title == 'Обучение сотрудников' %}
-                <div class="course-div">
-                    <a class="course-btn" href={% url 'cources' %}>ПОДРОБНЕЕ</a>
-                </div>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div id='flot' class='our-float'>
-        <h1>Наш флот</h1>
-        <div class='floats'>
-            <div class='float'>
-                <div class='float-img'>
-                    <img class='float-img-img' src={% static 'img/board1.png' %}>
-                </div>
-                <div class='float-text'>
-                    <p>Super Air Nautique GS20</p>
-                    <a></a>
-                </div>
-            </div>
-            <div class='float'>
-                <div class='float-img'>
-                    <img class='float-img-img' src={% static 'img/board2.png' %}>
-                </div>
-                <div class='float-text'>
-                    <p>Super Air Nautique G25 Paragon</p>
-                    <a></a>
-                </div>
+        <div class="wrapper-page">
+            <div class="about-second-page">
+                <h1>WAKEADDICTION</h1><br>
+                <p>СЕРФ ШКОЛА</P>
             </div>
         </div>
-    </div>
-    <h2 class="about-title">
-        Поймай волну на своей доске
-    </h2>
-    <div class="about-vector">
-        <img src="{% static 'img/Vector3.png' %}" alt="line">
-    </div>
-    <div class="wrapper-fist">
-        <div class="fist-text">
-            <div class='surfs'>
-                <div>
-                    <img src="{% static 'img/img1.png' %}">
+        <div class="uslugs-home">
+            <h3>Наши Услуги</h3>
+            <div class="uslugs">
+                {% for uslug in uslugs %}
+                <div class="uslugs-item">
+                    <img class='uslug-logo' src="{{ uslug.logo.url }}" alt='logo'>
+                    <div class="uslugs-title">
+                        {{ uslug.title }}
+                    </div>
+                    {% if uslug.title == 'Обучение сотрудников' %}
+                    <div class="course-div">
+                        <a class="course-btn" href="#">ПОДРОБНЕЕ</a>
+                    </div>
+                    {% endif %}
                 </div>
-                <div class="about-text">
-                    <h3 class="about-text-header">
-                        Tentacle skim leaf
-                    </h3>
-                    <p>
-                        Динамичная, ультра легкая модель. Ским имеет классическую симметричную форму. Универсальная модель для постановки вращений, шовитов и прыжков. Подойдет как новичкам, так и уверенным райдерам.
-                    </p>
-                </div>
+                {% endfor %}
             </div>
-            <div class='surfs'>
-                <div>
-                    <img src="{% static 'img/img2.png' %}">
+        </div>
+        <div id='flot' class='our-float'>
+            <h1>Наш флот</h1>
+            <div class='floats'>
+                <div class='float'>
+                    <div class='float-img'>
+                        <img class='float-img-img' src="{% static 'img/board1.png' %}" alt='board1'>
+                    </div>
+                    <div class='float-text'>
+                        <p>Super Air Nautique GS20</p>
+                        <a class='float-btn' href="#" ></a>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3 class="about-text-header">
-                        TTentacle surf etna  
-                    </h3>
-                    <p>
-                        Промодель Стаса Королькова. У модели есть хитрость с рокером к носу, которая помогает не топить нос даже при ошибке райдера. Особенная форма рейлов легоко держит доску на стенке волны и позволяет делать сложные серфовые трюки
-                    </p>
-                </div>
-            </div>
-            <div class='surfs'>
-                <div>
-                    <img src="{% static 'img/img3.png' %}">
-                </div>
-                <div class="about-text">
-                    <h3 class="about-text-header">
-                        Phase Five matrix PRO
-                    </h3>
-                    <p>
-                        Усовершенствованная доска Matrix соответствует самым высоким требованиям и рекомендована профессиональными райдерами Phase Five. Шейп этой доски позволяет получить максимальную отзывчивость и контроль доски, необходимые при выполнении трюков.
-                    </p>
-                </div>
-            </div>
-            <div class='surfs'>
-                <div>
-                    <img src="{% static 'img/img4.png' %}">
-                </div>
-                <div class="about-text">
-                    <h3 class="about-text-header">
-                        Soulcraft Control Freak
-                    </h3>
-                    <p>
-                        Если вы давний фанат досок Soulcraft, то эту модель вы знали по названию Super AV, эта доска создана для любителей скорости, модель позволяет новичкам и райдерам среднего уровня уверенно двигаться вперед, с легкостью развивая свои навыки.
-                    </p>
-                </div>
-            </div>
-            <div class='surfs'>
-                <div>
-                    <img src="{% static 'img/img5.png' %}">
-                </div>
-                <div class="about-text">
-                    <h3 class="about-text-header">
-                        Soulcraft M2
-                    </h3>
-                    <p>
-                        Модель берет свои корни от всем известной модели Emily она отличается более округлым тейлом (хвостом), более тупым носом и жесткими/острыми рейлами для лучшей скорости и маневренности. Эта доска взяла лучшее от предыдущих моделей и стала идеальной для быстрого карвинга и вращений.
-                    </p>
-                </div>
-            </div>
-            <div class='surfs'>
-                <div>
-                    <img src="{% static 'img/img6.png' %}">
-                </div>
-                <div class="about-text">
-                    <h3 class="about-text-header">
-                        Soulcraft Phoenix
-                    </h3>
-                    <p>
-                        Новая модель 2024 года в линейке Soulcfart. Более острые рейлы, конкейвы на поверхности доски, нос с углублением для более стабильной езды fin front, шейп доски позволяет делать высокие прыжки и при этом сохранять стабильность. Подходит для райдеров любого уровня катания.
-                    </p>
+                <div class='float'>
+                    <div class='float-img'>
+                        <img class='float-img-img' src="{% static 'img/board2.png' %}" alt='board2'>
+                    </div>
+                    <div class='float-text'>
+                        <p>Super Air Nautique G25 Paragon</p>
+                        <a class='float-btn' href="#"  ></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id='price' class='price'>
-        <h2 class="cource-title">
-            Цены на сезон 2024
+        <h2 class="about-title">
+            Поймай волну на своей доске
         </h2>
-        <div class='riders'>
-            <div class='ride1'>
-                <p>Катание в будни и выходные дни на Super Air Nautique GS20 </p>
-                <h3>6000 рублей за 25 минут</h3>
-                <a class="price-button" href={% url 'forma' %}>Забронировать</a>
-            </div>
-            <div class='ride1'>
-                <p>Катание в будни и выходные дни на Super Air Nautique G23 Paragon </p>
-                <h3>6000 рублей за 25 минут</h3>
-                <a class="price-button" href={% url 'forma' %}>Забронировать</a>
-            </div>
-        </div>
         <div class="about-vector">
             <img src="{% static 'img/Vector3.png' %}" alt="line">
         </div>
-        <div class='sert'>
-            <div class='sert-info'>
-                <h3>Подарочный сертификат</h3>
-                <p>
-                    Подарите друзьям незабываемые впечатления и новый опыт! Заказать понравившийся сертификат можно по ссылке ниже.
-                </p>
-                <div class='sert-but'>
-                    <a class="price-button" href="#zakaz">Заказать</a>
-                    <a class="sert-button" href="{% url 'sertificate' %}">Подробнее</a>
+        <div class="wrapper-fist">
+            <div class="fist-text">
+                <div class='surfs'>
+                    <div>
+                        <img src="{% static 'img/img1.png' %}" alt='i1'>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-text-header">
+                            Tentacle skim leaf
+                        </h3>
+                        <p>
+                            Динамичная, ультра легкая модель. Ским имеет классическую симметричную форму. Универсальная модель для постановки вращений, шовитов и прыжков. Подойдет как новичкам, так и уверенным райдерам.
+                        </p>
+                    </div>
+                </div>
+                <div class='surfs'>
+                    <div>
+                        <img src="{% static 'img/img2.png' %}" alt='i2'>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-text-header">
+                            TTentacle surf etna  
+                        </h3>
+                        <p>
+                            Промодель Стаса Королькова. У модели есть хитрость с рокером к носу, которая помогает не топить нос даже при ошибке райдера. Особенная форма рейлов легоко держит доску на стенке волны и позволяет делать сложные серфовые трюки
+                        </p>
+                    </div>
+                </div>
+                <div class='surfs'>
+                    <div>
+                        <img src="{% static 'img/img3.png' %}" alt='i3'>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-text-header">
+                            Phase Five matrix PRO
+                        </h3>
+                        <p>
+                            Усовершенствованная доска Matrix соответствует самым высоким требованиям и рекомендована профессиональными райдерами Phase Five. Шейп этой доски позволяет получить максимальную отзывчивость и контроль доски, необходимые при выполнении трюков.
+                        </p>
+                    </div>
+                </div>
+                <div class='surfs'>
+                    <div>
+                        <img src="{% static 'img/img4.png' %}" alt='i4'>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-text-header">
+                            Soulcraft Control Freak
+                        </h3>
+                        <p>
+                            Если вы давний фанат досок Soulcraft, то эту модель вы знали по названию Super AV, эта доска создана для любителей скорости, модель позволяет новичкам и райдерам среднего уровня уверенно двигаться вперед, с легкостью развивая свои навыки.
+                        </p>
+                    </div>
+                </div>
+                <div class='surfs'>
+                    <div>
+                        <img src="{% static 'img/img5.png' %}" alt='i5'>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-text-header">
+                            Soulcraft M2
+                        </h3>
+                        <p>
+                            Модель берет свои корни от всем известной модели Emily она отличается более округлым тейлом (хвостом), более тупым носом и жесткими/острыми рейлами для лучшей скорости и маневренности. Эта доска взяла лучшее от предыдущих моделей и стала идеальной для быстрого карвинга и вращений.
+                        </p>
+                    </div>
+                </div>
+                <div class='surfs'>
+                    <div>
+                        <img src="{% static 'img/img6.png' %}" alt='i6'>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-text-header">
+                            Soulcraft Phoenix
+                        </h3>
+                        <p>
+                            Новая модель 2024 года в линейке Soulcfart. Более острые рейлы, конкейвы на поверхности доски, нос с углублением для более стабильной езды fin front, шейп доски позволяет делать высокие прыжки и при этом сохранять стабильность. Подходит для райдеров любого уровня катания.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class='sert-img'>
-                <img src="{% static 'img/surprise.png' %}">
+        </div>
+        <div id='price' class='price'>
+            <h2 class="cource-title">
+                Цены на сезон 2024
+            </h2>
+            <div class='riders'>
+                <div class='ride1'>
+                    <p>Катание в будни и выходные дни на Super Air Nautique GS20 </p>
+                    <h3>6000 рублей за 25 минут</h3>
+                    <a class="price-button" href={% url 'forma' %}>Забронировать</a>
+                </div>
+                <div class='ride1'>
+                    <p>Катание в будни и выходные дни на Super Air Nautique G23 Paragon </p>
+                    <h3>6000 рублей за 25 минут</h3>
+                    <a class="price-button" href={% url 'forma' %}>Забронировать</a>
+                </div>
+            </div>
+            <div class="about-vector">
+                <img src="{% static 'img/Vector3.png' %}" alt="line">
+            </div>
+            <div class='sert'>
+                <div class='sert-info'>
+                    <h3>Подарочный сертификат</h3>
+                    <p>
+                        Подарите друзьям незабываемые впечатления и новый опыт! Заказать понравившийся сертификат можно по ссылке ниже.
+                    </p>
+                    <div class='sert-but'>
+                        <a class="price-button" href="#zakaz">Заказать</a>
+                        <a class="sert-button" href="{% url 'sertificate' %}">Подробнее</a>
+                    </div>
+                </div>
+                <div class='sert-img'>
+                    <img src="{% static 'img/surprise.png' %}" alt='surp'>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="cources-home">
-        <div class="title">Команда мечты</div>
-        <div class="about-vector">
-            <img src="{% static 'img/Vector3.png' %}" alt="line">
-        </div>
-        <div class='worker-home'>
-            <div class='worker'>
-                <img class='worker-img' src="{% static 'img/work1.png' %}">
+        <div class="cources-home">
+            <div class="title">Команда мечты</div>
+            <div class="about-vector">
+                <img src="{% static 'img/Vector3.png' %}" alt="line">
             </div>
-            <div class='work-info'>
-                <h3>Филипп Миндрин</h3>
-                <h2>Тренер/Пилот катера</h2>
-                <p>
-                    Опытный тренер и  пилот. 2 года в индустрии вейксерфа. Сертифицированный тренер
-                </p>
+            <div class='worker-home'>
+                <div class='worker'>
+                    <img class='worker-img' src="{% static 'img/work1.png' %}" alt='w1'>
+                </div>
+                <div class='work-info'>
+                    <h3>Филипп Миндрин</h3>
+                    <h2>Тренер/Пилот катера</h2>
+                    <p>
+                        Опытный тренер и  пилот. 2 года в индустрии вейксерфа. Сертифицированный тренер
+                    </p>
+                </div>
+                <div class='worker'>
+                    <img class='worker-img' src="{% static 'img/work2.png' %}" alt='w2'>
+                </div>
+                <div class='work-info'>
+                    <h3>Саша Дружных</h3>
+                    <h2>Тренер/Пилот катера</h2>
+                    <p>
+                        Опытный тренер и  пилот. 5 лет в индустрии вейксерфа. Сертифицированный тренер и пилот.
+                    </p>
+                </div>
             </div>
-            <div class='worker'>
-                <img class='worker-img' src="{% static 'img/work2.png' %}">
-            </div>
-            <div class='work-info'>
-                <h3>Саша Дружных</h3>
-                <h2>Тренер/Пилот катера</h2>
-                <p>
-                    Опытный тренер и  пилот. 5 лет в индустрии вейксерфа. Сертифицированный тренер и пилот.
-                </p>
+            <div class="button1">
+                <a class="button-worker" href="{% url 'workers' %}">Посмотреть всю команду</a>
             </div>
         </div>
-        <div class="button1">
-        <button class="btn">
-            <a class="button-worker", href="{% url 'workers' %}">Посмотреть всю команду</a>
-        </button>
+        <div class="title-reiting">Часто задаваемые вопросы</div>
+        <div class="container"> 
+            <ul> 
+                <li class="faq"> 
+                    <div class="question"> 
+                        Сколько людей одновременно могут находиться на лодке?
+                        <span class="icon-main"> 
+                            <i class="fa-solid fa-plus"></i> 
+                        </span> 
+                    </div> 
+                    <div class="answer non-active"> 
+                        Зависит от выбранного вами катера. В наших катерах могут быть компании до 10 гостей в Super Air Nautique GS20  и до 17 гостей в Super Air Nautiqe G25
+                    </div> 
+                </li> 
+                <li class="faq"> 
+                    <div class="question"> 
+                        Что нужно взять с собой?
+                        <span class="icon-main"> 
+                            <i class="fa-solid fa-plus"></i> 
+                        </span> 
+                    </div> 
+                    <p class="answer non-active"> 
+                        Плавки (купальник) и полотенце. В катере всегда есть вода, чистые запасные полотенца, зарядки для ваших телефонов.
+                    </p> 
+    
+                </li> 
+                <li class="faq"> 
+                    <div class="question"> 
+                        Есть ли в прокате гидрокостюмы?
+                        <span class="icon-main"> 
+                            <i class="fa-solid fa-plus"></i> 
+                        </span> 
+                    </div> 
+                    <p class="answer non-active"> 
+                        Да. Гидрокостюмы всех размеров для мужчин и девушек. Все гидрокостюмы проходят гигиеническую обработку.
+                    </p> 
+    
+                </li> 
+                <li class="faq"> 
+                    <div class="question"> 
+                        Есть ли в прокате спасательные жилеты?
+                        <span class="icon-main"> 
+                            <i class="fa-solid fa-plus"></i> 
+                        </span> 
+                    </div> 
+                    <p class="answer non-active"> 
+                        Да. Жилеты всех размеров для мужчин и девушек. Мы за безопасное катание.
+                    </p> 
+    
+                </li> 
+                <li class="faq"> 
+                    <div class="question"> 
+                        Есть ли доски в прокате?
+                        <span class="icon-main"> 
+                            <i class="fa-solid fa-plus"></i> 
+                        </span> 
+                    </div> 
+                    <p class="answer non-active"> 
+                        Да. В прокате есть серфы, скимы и океанические лонгборды. Все доски подбираются индивидуально.
+                    </p> 
+    
+                </li> 
+            </ul> 
+        </div> 
+        <script> 
+            const faqs = document.querySelectorAll(".faq"); 
+            for (const item of faqs) { 
+                const curr_faq = item.childNodes; 
+                console.log(curr_faq); 
+                const question = curr_faq[1]; 
+                const answer = curr_faq[3]; 
+                const icon = question.querySelector(".icon-main"); 
+                icon.addEventListener("click", function () { 
+                    answer.classList.toggle("non-active"); 
+                    const i = icon.querySelector("i"); 
+                    i.classList.toggle("fa-xmark"); 
+                    i.classList.toggle("fa-plus"); 
+                }); 
+            } 
+        </script> 
+        <div class='knopka'>
+            <a class="button-reiting" href="{% url 'reiting' %}">УЗНАТЬ БОЛЬШЕ</a>
         </div>
-    </div>
-    <div class="title-reiting">Часто задаваемые вопросы</div>
-    <div class="container"> 
-        <ul> 
-            <li class="faq"> 
-                <div class="question"> 
-                    Сколько людей одновременно могут находиться на лодке?
-                    <span class="icon-main"> 
-                        <i class="fa-solid fa-plus"></i> 
-                    </span> 
-                </div> 
-                <div class="answer non-active"> 
-                    Зависит от выбранного вами катера. В наших катерах могут быть компании до 10 гостей в Super Air Nautique GS20  и до 17 гостей в Super Air Nautiqe G25
-                </div> 
-            </li> 
-            <li class="faq"> 
-                <div class="question"> 
-                    Что нужно взять с собой?
-                    <span class="icon-main"> 
-                        <i class="fa-solid fa-plus"></i> 
-                    </span> 
-                </div> 
-                <p class="answer non-active"> 
-                    Плавки (купальник) и полотенце. В катере всегда есть вода, чистые запасные полотенца, зарядки для ваших телефонов.
-                </p> 
-  
-            </li> 
-            <li class="faq"> 
-                <div class="question"> 
-                    Есть ли в прокате гидрокостюмы?
-                    <span class="icon-main"> 
-                        <i class="fa-solid fa-plus"></i> 
-                    </span> 
-                </div> 
-                <p class="answer non-active"> 
-                    Да. Гидрокостюмы всех размеров для мужчин и девушек. Все гидрокостюмы проходят гигиеническую обработку.
-                </p> 
-  
-            </li> 
-            <li class="faq"> 
-                <div class="question"> 
-                    Есть ли в прокате спасательные жилеты?
-                    <span class="icon-main"> 
-                        <i class="fa-solid fa-plus"></i> 
-                    </span> 
-                </div> 
-                <p class="answer non-active"> 
-                    Да. Жилеты всех размеров для мужчин и девушек. Мы за безопасное катание.
-                </p> 
-  
-            </li> 
-            <li class="faq"> 
-                <div class="question"> 
-                    Есть ли доски в прокате?
-                    <span class="icon-main"> 
-                        <i class="fa-solid fa-plus"></i> 
-                    </span> 
-                </div> 
-                <p class="answer non-active"> 
-                    Да. В прокате есть серфы, скимы и океанические лонгборды. Все доски подбираются индивидуально.
-                </p> 
-  
-            </li> 
-        </ul> 
-    </div> 
-    <script> 
-        const faqs = document.querySelectorAll(".faq"); 
-        for (const item of faqs) { 
-            const curr_faq = item.childNodes; 
-            console.log(curr_faq); 
-            const question = curr_faq[1]; 
-            const answer = curr_faq[3]; 
-            const icon = question.querySelector(".icon-main"); 
-            icon.addEventListener("click", function () { 
-                answer.classList.toggle("non-active"); 
-                const i = icon.querySelector("i"); 
-                i.classList.toggle("fa-xmark"); 
-                i.classList.toggle("fa-plus"); 
-            }); 
-        } 
-    </script> 
-    <div class='knopka'>
-        <button class="btn">
-            <a class="button-reiting", href="{% url 'reiting' %}">УЗНАТЬ БОЛЬШЕ</a>
-        </button>
-    </div>
-    <div class="carta">
-        <div className="mb-6">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A33d9b12bf10a94f316c00e61ca8c3c21be5368b23fb6a8fb5bdb38ac37c8addb&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        <div class="carta">
+            <div class="mb-6">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A33d9b12bf10a94f316c00e61ca8c3c21be5368b23fb6a8fb5bdb38ac37c8addb&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
         </div>
-    </div>
-    </body>
 {% endblock %}

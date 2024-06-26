@@ -113,7 +113,7 @@ main {
 
 .button-prof{
     background-color: #66FCF1;
-    color: #1F2833;
+    color: #c5c6c7;
     height: 96px;
     font-size: 31px;
     font-weight: 700;
@@ -123,6 +123,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    text-decoration: none;
     margin: 0 auto;
 }
 
@@ -1716,3 +1718,84 @@ textarea{
     justify-content: center;
     align-items: center;
 }
+
+.float-btn {
+    width: 180px;
+    height: 48px;
+    background-color: #66FCF1;
+    color: #1F2833;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+    /* HIDE RADIO */
+    [type=radio] { 
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+    
+        /* IMAGE STYLES */
+        [type=radio] + img {
+        cursor: pointer;
+        width: 100px;
+        }
+    
+        /* CHECKED STYLES */
+        [type=radio]:checked + img {
+        outline: 2px solid #f00;
+        }
+    
+        .forma p {
+            color:#000000;
+            font-size:20px;
+            font-weight:600;
+        }
+    
+        textarea {
+            background-color:#c5c6c7;
+            border: 1px solid #000;
+            color:#000;
+        }
+    
+        .forma {
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        .schedule-card-conteiner {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(auto);
+        }
+
+        .work-info {
+            display: flex;
+            flex-direction: column;
+            width: 340px;
+            text-align:center;
+        }
+
+        .work-info p {
+            color: #1f2833;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .work-info h2 {
+            color: #1f2833;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .work-info h3 {
+            color: #1f2833;
+            font-size:31px;
+            font-weight: 600;
+        }
+        .title {
+            color: #1f2833;
+            font-size: 39px;
+            font-weight: 400;
+        }

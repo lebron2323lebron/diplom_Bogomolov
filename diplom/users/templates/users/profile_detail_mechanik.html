@@ -10,7 +10,7 @@
             <div class="roe">
                 <div class="col-xl-4 col-sm-12">
                     <p>
-                        Группаqwertyu: {{ user_group }}
+                        Роль: {{ user_group }}
                         {% if user_profile.last_name %}
                             <br>
                             {{ user_profile.last_name }}
@@ -26,9 +26,28 @@
                     </p>
                     <div class="button-prof">
                         
-                        <a href="edit_user_profile/{{ profile.id }}">Редактировать</a>
+                        <a href="{% url 'create_remont' %}">Добавить работу</a>
                         
                     </div>
+                </div>
+                <div class="schedule-card-conteiner">
+                    {% for remont in remonts %}
+                    <div class="schedule-card">
+                        <div class="schedule-card-header">
+                            {{ remont.data }}
+                        </div>
+                        <div class="schedule-card-content">
+                            <p>
+                                {{ remont.usluga }}
+                            </p>
+                        </div>
+                    </div>
+                        <h1>Ремонт успешно создан</h1>
+                        <p>Механик: {{ remont.mehanik }}</p>
+                        <p>Дата ремонта: {{ remont.data }}</p>
+                        <p>Описание ремонта: {{ remont.usluga }}</p>
+                        <p>Катер: {{ remont.kater }}</p>
+                    {% endfor %}
                 </div>
             </div>
         </div>

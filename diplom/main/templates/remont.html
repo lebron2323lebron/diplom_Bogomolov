@@ -1,0 +1,101 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Форма для ремонта{% endblock %}
+
+{% block content %}
+<style>
+    /* HIDE RADIO */
+    [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    /* IMAGE STYLES */
+    [type=radio] + img {
+    cursor: pointer;
+    width: 100px;
+    }
+
+    /* CHECKED STYLES */
+    [type=radio]:checked + img {
+    outline: 2px solid #f00;
+    }
+
+    .forma p {
+        color:#000000;
+        font-size:20px;
+        font-weight:600;
+    }
+
+    textarea {
+        background-color:#c5c6c7;
+        border: 1px solid #000;
+        color:#000;
+    }
+
+    .forma {
+        margin-bottom: 30px;
+        padding: 10px;
+    }
+</style>
+<form name='myForm' onsubmit="return validateForm()" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="button_reg">
+        <button type="submit" class="btn btn-dark mt-2">Отправить запись</button>
+    </div>
+</form>
+{% comment %} <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="mehanik">Механик:</label>
+      <select name="mehanik" id="mehanik">
+        {% for user in users %}
+          <option >{{ user.username }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="data">Дата ремонта:</label>
+      <input type="datetime-local" name="data" id="data" required>
+    </div>
+    <div>
+      <label for="usluga">Описание ремонта:</label>
+      <input type="text" name="usluga" id="usluga" maxlength="255" required>
+    </div>
+    <div>
+      <label for="kater">Катер:</label>
+      <select name="kater" id="kater">
+        {% for kater in katers %}
+          <option >{{ kater.url }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit">Создать запись</button>
+</form> {% endcomment %}
+  <script>
+    function validateForm() {
+
+        
+        var usluga = document.forms["myForm"]['id_mehanik'].value;
+        var kolichestvo = document.forms["myForm"]['id_data'].value;
+        var komment = document.forms["myForm"]['id_usluga'].value;
+        var kater = document.forms["myForm"]['id_kater'].value;
+        if (usluga == "") {
+          alert("Выберите услугу.");
+          return false;
+        }
+        if (phoneNumber === '' || usluga === '' || kolichestvo === '' || komment === '' || created === '') {
+          alert('Все поля обязательны для заполнения.');
+          return;
+        }
+        if (kater == "") {
+          alert("Выберите катер.");
+          return false;
+        }
+      }
+</script>
+  
+{% endblock %}
